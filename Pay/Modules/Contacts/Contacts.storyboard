@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7hX-dd-GAg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="AgA-Ga-HlV">
+            <objects>
+                <navigationController id="7hX-dd-GAg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="GBD-p2-sva"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="puS-SY-8PW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xBs-db-Qdt" kind="relationship" relationship="rootViewController" id="JrW-JK-Ks2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSK-8n-RVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="108"/>
+        </scene>
+        <!--Contacts View Controller-->
+        <scene sceneID="MJV-55-qxl">
+            <objects>
+                <viewController id="xBs-db-Qdt" customClass="ContactsViewController" customModule="Pay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MaF-Ce-K4f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lde-IK-gr8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsTableViewCell" rowHeight="83" id="JtX-KI-ZCb" customClass="ContactsTableViewCell" customModule="Pay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JtX-KI-ZCb" id="4xS-Mc-yOK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xBs-db-Qdt" id="Tl4-Oa-xNf"/>
+                                    <outlet property="delegate" destination="xBs-db-Qdt" id="XGs-hh-GsU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11381004005670547" green="0.11755905300378799" blue="0.12623128294944763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lde-IK-gr8" firstAttribute="leading" secondItem="YPF-0i-IYn" secondAttribute="leading" id="DbP-ll-FUb"/>
+                            <constraint firstItem="Lde-IK-gr8" firstAttribute="bottom" secondItem="YPF-0i-IYn" secondAttribute="bottom" id="LXJ-9E-gR7"/>
+                            <constraint firstItem="Lde-IK-gr8" firstAttribute="trailing" secondItem="YPF-0i-IYn" secondAttribute="trailing" id="Rbv-my-AyE"/>
+                            <constraint firstItem="Lde-IK-gr8" firstAttribute="top" secondItem="YPF-0i-IYn" secondAttribute="top" id="fT0-Z1-tUx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YPF-0i-IYn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LPW-ae-sHC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Lde-IK-gr8" id="kXv-IQ-96d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmY-a1-Y10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285.60000000000002" y="107.49625187406298"/>
+        </scene>
+    </scenes>
+</document>
